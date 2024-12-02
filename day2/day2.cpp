@@ -7,7 +7,7 @@
 const std::string path = "../day2/day2_input.txt";
 
 bool is_safe(const std::vector<int>& tokens) {
-    if (tokens.size() < 2) return true;
+    if (tokens.size() <= 2) return true;
     bool increasing = tokens[1] > tokens[0];
     for (size_t i = 1; i < tokens.size(); ++i) {
         if ((tokens[i] > tokens[i - 1]) != increasing || !(abs(tokens[i] - tokens[i - 1]) >= 1 && abs(tokens[i] - tokens[i - 1]) <= 3)) {
